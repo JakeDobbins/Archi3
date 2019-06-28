@@ -1,3 +1,10 @@
 #!/bin/bash
 set -e
-sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa
+
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol  --noconfirm --needed
+sudo pacman -S alsa-utils alsa-plugins alsa-lib alsa-firmware --noconfirm --needed
+sudo pacman -S gst-plugins-good gst-plugins-bad gst-plugins-base gst-plugins-ugly  gstreamer  --noconfirm --needed
+
+echo "################################################################"
+echo "#########   sound software software installed   ################"
+echo "################################################################"
