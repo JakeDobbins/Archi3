@@ -27,7 +27,7 @@ pacman -Syy
 pacman -S reflector
 reflector -c "United States" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel
-genfstb -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
 hwclock --systohc
@@ -46,7 +46,7 @@ passwd
 #Install and setup grub
 sudo pacman -S grub efibootmgr os-prober
 grub-install --target=x86_64-efi --efi-directory=/boot
-grub-mfconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
 #Microcode updates for intel
 pacman -S intel-ucode
 exit
